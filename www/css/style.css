@@ -1,7 +1,74 @@
 /* Empty. Add your own CSS if you like */
+body {
+  background: #7FFF00;
+}
 #gradient{
   width: 100%;
-  height: 150px;
+  height: 350px;
   padding: 0px;
   margin: 0px;
+  position: absolute;
+}
+#transparent{
+  width: 100%;
+  height: 290px;
+  padding: 0px;
+  margin: 0px;
+}
+.button-ini-res {
+  background: transparent;
+  /*border: 2px solid #1d70b7;*/
+  border-bottom: none;
+  top:10%;
+  text-align: center;
+}
+.button-ini-res span {
+  margin-right: -5px;
+  cursor: pointer;
+  position: relative;
+  padding: 18px 35px 18px;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.button-ini-ress span:hover {
+  /*background: #222;*/
+}
+.button-ini-ress .active {
+  /*background: #1d70b7;
+  color: #ffffff;*/
+}
+.button-ini-res .active:hover {
+  /*background: #1d70b7;
+  color: #ffffff;*/
+}
+.button-ini-res .active:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 0;
+  left: 50%;
+  margin-left: -10px;
+  border-style: solid;
+  border-width: 0 14px 14px 14px;
+  border-color: transparent transparent #fff transparent;
+}
+.content-init-res {
+  /*border: 2px solid #1d70b7;*/
+  border-top: none;
+  background: #fff;
+  clear: both;
+  overflow: hidden;
+  text-align: center;
+  padding: 3%;
+  margin-bottom: 30px;
+  position: relative;
+}
+.content-init-res img {
+  border: 4px solid #f1f1f1;
 }

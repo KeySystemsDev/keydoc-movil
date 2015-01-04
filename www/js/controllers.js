@@ -1,5 +1,9 @@
 angular.module('starter.controllers', [])
 
+.controller('InitKey', function($scope) {
+  $scope.selected = "2";
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
