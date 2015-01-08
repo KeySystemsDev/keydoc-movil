@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
   $scope.signIn = function(user) {
     console.log('Sign-In', user);
 
-    $state.go('tab.chats');
+    $state.go('tab.dash');
   };
 
 })
