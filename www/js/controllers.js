@@ -1,7 +1,14 @@
 angular.module('starter.controllers', [])
 
-.controller('InitKey', function($scope) {
+.controller('InitKey', function($scope, $state) {
   $scope.selected = "2";
+
+  $scope.signIn = function(user) {
+    console.log('Sign-In', user);
+
+    $state.go('tab.chats');
+  };
+
 })
 
 .controller('DashCtrl', function($scope) {})

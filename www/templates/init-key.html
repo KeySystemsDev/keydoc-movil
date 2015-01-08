@@ -17,8 +17,36 @@
           This is first content...
         </div>
         <div ng-show='selected == 2'>
-          This is second content...
+          <ion-content has-header="true">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Username</span>
+              <input type="text" ng-model="user.username">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Password</span>
+              <input type="password" ng-model="user.password">
+            </label>
+            <a class="button icon-left ion-chevron-right button-clear button-init-sesion"
+                    ng-click="signIn(user,password)"></a>
+          </div>
         </div>
       </div>
   </ion-content>
 </ion-view>
+
+<ion-tabs class="tabs-icon tabs-color-active-positive">
+
+  <ion-tab icon="ion-social-facebook">
+  </ion-tab>
+
+  <ion-tab icon="ion-social-twitter">
+  </ion-tab>
+
+  <ion-tab icon="ion-social-googleplus">
+  </ion-tab>
+
+  <ion-tab icon="ion-social-instagram">
+  </ion-tab>
+
+</ion-tabs>
