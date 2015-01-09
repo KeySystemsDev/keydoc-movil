@@ -6,12 +6,14 @@ angular.module('starter.controllers', [])
   $scope.signIn = function(user) {
     console.log('Sign-In', user);
 
-    $state.go('tab.dash');
+    $state.go('tab.friends');
   };
 
 })
 
-.controller('DashCtrl', function($scope) {})
+.controller('SearchCtrl', function($scope) {
+    console.log('.i.');
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
