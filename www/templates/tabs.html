@@ -5,20 +5,19 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-
   <!-- Citas -->
-  <ion-tab title="Citas" icon-off="ion-ios7-medkit-outline" icon-on="ion-ios7-medkit" href="#/tab/dash">
+  <ion-tab title="Citas" icon-off="ion-ios7-medkit-outline" icon-on="ion-ios7-medkit" href="#/tab/friends">
+    <ion-nav-view name="tab-friends"></ion-nav-view>
+  </ion-tab>
+
+  <!--  Buscar -->
+  <ion-tab title="Buscar" icon-off="ion-ios7-search" icon-on="ion-ios7-search-strong" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
-  <!-- Buscar -->
-  <ion-tab title="Buscar" icon-off="ion-ios7-search" icon-on="ion-ios7-search-strong" href="#/tab/chats">
+  <!-- Notificaciones  -->
+  <ion-tab title="Notificaciones" icon-off="ion-ios7-heart-outline" icon-on="ion-ios7-heart" href="#/tab/chats">
     <ion-nav-view name="tab-chats"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Notificaciones -->
-  <ion-tab title="Notificaciones" icon-off="ion-ios7-heart-outline" icon-on="ion-ios7-heart" href="#/tab/friends">
-    <ion-nav-view name="tab-friends"></ion-nav-view>
   </ion-tab>
 
 
