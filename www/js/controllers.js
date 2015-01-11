@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
   $scope.signIn = function(user) {
     console.log('Sign-In', user);
 
-    $state.go('tab.friends');
+    $state.go('tab.citas');
   };
 
 })
@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('FriendsCtrl', function($scope, Friends, Specialty) {
+.controller('CitasCtrl', function($scope, Friends, Specialty) {
   $scope.friends = Friends.all();
   $scope.specialty = Specialty.all();
   console.log($scope.specialty);

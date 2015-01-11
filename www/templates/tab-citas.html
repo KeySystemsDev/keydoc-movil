@@ -7,10 +7,10 @@
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>-->
 
-      <ion-item class="item-avatar item-icon-right" ng-repeat="specialtys in specialty" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+      <ion-item class="item-avatar item-icon-right" ng-repeat="specialtys in specialty" type="item-text-wrap" >
         <img ng-src="{{specialtys.icons}}">
         <h2>{{specialtys.name}}</h2>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+        <a href="#/tab/municipios"><i class="icon ion-chevron-right icon-accessory" ></i><a>
       </ion-item>
     
     </ion-list>
