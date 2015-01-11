@@ -1,11 +1,18 @@
 <ion-view view-title="Programar Citas">
   <ion-content>
     <ion-list>
-      <ion-item class="item-avatar item-icon-right" ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+      <!--<ion-item class="item-avatar item-icon-right" ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
         <img ng-src="{{friend.face}}">
         <h2>{{friend.name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>-->
+
+      <ion-item class="item-avatar item-icon-right" ng-repeat="specialtys in specialty" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+        <img ng-src="{{specialtys.icons}}">
+        <h2>{{specialtys.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
+    
     </ion-list>
   </ion-content>
 </ion-view>

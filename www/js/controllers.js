@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SearchCtrl', function($scope) {
-    console.log('.i.');
+    
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -26,8 +26,10 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
+.controller('FriendsCtrl', function($scope, Friends, Specialty) {
   $scope.friends = Friends.all();
+  $scope.specialty = Specialty.all();
+  console.log($scope.specialty);
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {

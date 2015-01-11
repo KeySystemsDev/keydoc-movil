@@ -61,7 +61,7 @@ angular.module('starter.services', [])
     id: 0,
     name: 'Ben Sparrow',
     notes: 'Enjoys drawing things',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
+    face: 'img/ionic.png'
   }, {
     id: 1,
     name: 'Max Lynx',
@@ -94,4 +94,51 @@ angular.module('starter.services', [])
       return friends[friendId];
     }
   }
-});
+})
+
+/**
+ * A simple example service that returns some data.
+*/
+.factory('Specialty', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  // Some fake testing data
+  var specialty = [{
+    id: 0,
+    name: 'Especialidad 1',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 1,
+    name: 'Especialidad 2',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 2,
+    name: 'Especialidad 3',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 3,
+    name: 'Especialidad 4',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 4,
+    name: 'Especialidad 5',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }];
+
+
+  return {
+    all: function() {
+      return specialty;
+    },
+    get: function(specialtyId) {
+      // Simple index lookup
+      return specialty[specialtyId];
+    }
+  }
+}); 
