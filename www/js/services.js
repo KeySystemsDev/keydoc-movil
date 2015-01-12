@@ -282,4 +282,51 @@ angular.module('starter.services', [])
       return doctores[doctoresId];
     }
   }
+})
+
+/**
+ * A simple example service that returns some data.
+*/
+.factory('Horarios', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  // Some fake testing data
+  var horarios = [{
+    id: 0,
+    name: 'horarios 1',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 1,
+    name: 'horarios 2',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 2,
+    name: 'horarios 3',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 3,
+    name: 'horarios 4',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }, {
+    id: 4,
+    name: 'horarios 5',
+    summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    icons: 'img/ionic.png'
+  }];
+
+
+  return {
+    all: function() {
+      return horarios;
+    },
+    get: function(horariosId) {
+      // Simple index lookup
+      return horarios[horariosId];
+    }
+  }
 });   

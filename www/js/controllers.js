@@ -43,6 +43,10 @@ angular.module('starter.controllers', [])
     $scope.doctores = Doctores.all();
 })
 
+.controller('HorariosCtrl', function($scope, Horarios) {
+    $scope.horarios = Horarios.all();
+})
+
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
   $scope.friend = Friends.get($stateParams.friendId);
 })

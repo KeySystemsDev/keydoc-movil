@@ -103,6 +103,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'DoctoresCtrl'
     })
 
+  .state('horarios', {
+      url: '/horarios',
+      templateUrl: 'templates/horarios.html',
+      controller: 'HorariosCtrl'
+    })
+
     .state('tab.friend-detail', {
       url: '/friend/:friendId',
       views: {
