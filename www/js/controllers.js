@@ -11,7 +11,14 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('SearchCtrl', function($scope) {
+.controller('PerfilCtrl', function($scope) {
+    
+})
+
+.controller('SearchCtrl', function($scope, Doctores) {
+    
+    $scope.doctores = Doctores.all();
+
     $scope.playlists = [
         { title: 'Dr.Carlos Lorem iIpsum', id: 1 },
         { title: 'Dr.Diego Lorem iIpsum', id: 2 },
