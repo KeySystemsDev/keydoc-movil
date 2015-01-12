@@ -84,6 +84,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+  
+  .state('estados', {
+      url: '/estados',
+      templateUrl: 'templates/estados.html',
+      controller: 'EstadosCtrl'
+    })
+
+  .state('municipios', {
+      url: '/municipios',
+      templateUrl: 'templates/municipios.html',
+      controller: 'MunicipiosCtrl'
+    })
+
+  .state('doctores', {
+      url: '/doctores',
+      templateUrl: 'templates/doctores.html',
+      controller: 'DoctoresCtrl'
+    })
+
     .state('tab.friend-detail', {
       url: '/friend/:friendId',
       views: {

@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
   $scope.selected = "2";
 
   $scope.signIn = function(user) {
-    console.log('Sign-In', user);
+    //console.log('Sign-In', user);
 
     $state.go('tab.citas');
   };
@@ -29,7 +29,18 @@ angular.module('starter.controllers', [])
 .controller('CitasCtrl', function($scope, Friends, Specialty) {
   $scope.friends = Friends.all();
   $scope.specialty = Specialty.all();
-  console.log($scope.specialty);
+})
+
+.controller('EstadosCtrl', function($scope, Estados) {
+    $scope.estados = Estados.all();
+})
+
+.controller('MunicipiosCtrl', function($scope, Municipios) {
+    $scope.municipios = Municipios.all();
+})
+
+.controller('DoctoresCtrl', function($scope, Doctores) {
+    $scope.doctores = Doctores.all();
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
