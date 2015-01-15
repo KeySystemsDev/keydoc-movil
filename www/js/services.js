@@ -329,4 +329,61 @@ angular.module('starter.services', [])
       return horarios[horariosId];
     }
   }
-});   
+})
+
+/**
+ * A simple example service that returns some data.
+*/
+.factory('Citas', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  // Some fake testing data
+  var citas = [{
+    id: 0,
+    name: 'cita 1',
+    doctor: 'Doctor 1',
+    icons: 'img/ionic.png',
+    hora: 'x:xx',
+    fecha: 'xx/xx/xx'
+  }, {
+    id: 1,
+    name: 'cita 2',
+    doctor: 'Doctor 2',
+    icons: 'img/ionic.png',
+    hora: 'x:xx',
+    fecha: 'xx/xx/xx'
+  }, {
+    id: 2,
+    name: 'cita 3',
+    doctor: 'Doctor 3',
+    icons: 'img/ionic.png',
+    hora: 'x:xx',
+    fecha: 'xx/xx/xx'
+  }, {
+    id: 3,
+    name: 'cita 4',
+    doctor: 'Doctor 4',
+    icons: 'img/ionic.png',
+    hora: 'x:xx',
+    fecha: 'xx/xx/xx'
+  }, {
+    id: 4,
+    name: 'cita 5',
+    doctor: 'Doctor 5',
+    icons: 'img/ionic.png',
+    hora: 'x:xx',
+    fecha: 'xx/xx/xx'
+  }];
+
+
+  return {
+    all: function() {
+      return citas;
+    },
+    get: function(citasId) {
+      // Simple index lookup
+      return citas[citasId];
+    }
+  }
+});    

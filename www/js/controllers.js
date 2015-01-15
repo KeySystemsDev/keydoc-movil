@@ -11,8 +11,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('PerfilCtrl', function($scope) {
-    
+.controller('PerfilCtrl', function($scope, Citas) {
+    $scope.citas = Citas.all();
 })
 
 .controller('SearchCtrl', function($scope, Doctores) {

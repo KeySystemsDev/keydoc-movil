@@ -19,23 +19,37 @@
         <div class="jr-stat"><span><span class="jr-numbers">3</span><br/><small><i class="icon ion-ios7-person"></i> Doctores</small></span></div>
       </div>
       <div class="jr-about">
-        I like getting involved in improving user experience & building better user interfaces on the web. I do frequently contribute to stackoverflow community & occasionally contribute to open source.
-
       </div>
     </div>
+    
     <div class="jr-footer">
-      <div class="jr-social-links">
-        <div class="jr-social-link"><a href="#"><i class="fa fa-linkedin"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-github"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-stack-overflow"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-codepen"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-twitter"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-facebook"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-dribbble"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-angellist"></i></a></div>
+      <div class="jr-cita">
+        <div class="jr-citas"><i class="icon ion-ios7-medkit"></i> CITAS</div>  		
       </div>
     </div>
+    
+
+    <!-- <ion-item class="item-avatar item-icon-right" ng-repeat="cita in citas" type="item-text-wrap" >
+        <img ng-src="{{cita.icons}}">
+        <div class="item-citas">
+	        <h2>Doctores: {{cita.doctor}}</h2>
+	        <h3>Hora: {{cita.hora}}</h3>
+	        <h3>Fecha: {{cita.fecha}}</h3>
+	    <div/>
+        <a href="#"><i class="icon ion-chevron-right icon-accessory" ></i><a>
+    </ion-item> -->
   </div>
+
+  	<div class="jr-content">
+      <div class="jr-stats" ng-repeat="cita in citas">
+        <div class="jr-stat"><span><span class="jr-numbers"><div class="picture-container-citas"><img src="img/ionic.png"/></div></div>
+        <div class="jr-stat">Doctor: {{cita.doctor}}</div>
+        <div class="jr-stat">Hora: {{cita.hora}}</div>
+        <div class="jr-stat">Fecha: {{cita.fecha}}</div>
+        <div class="jr-stat-a"><div><a href="#"><i class="icon ion-chevron-right icon-accessory color-citas-icon" ></i><a></div></div>
+      </div>
+    </div>
+
 </div>
     </ion-content>
 </ion-view>

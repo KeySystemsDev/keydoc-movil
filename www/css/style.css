@@ -77,7 +77,7 @@ body {
 	right: -48%;
 	top: 5px;
 }
-
+/*Perfil*/
 .jr-card-theme-default,
 .jr-card-theme-minimal {
   color: #777;
@@ -91,8 +91,8 @@ body {
   background-color: white;
   /*font-family: 'Lato' sans-serif;*/
   position: relative;
-  border: 1px solid #efefef;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  /*box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);*/
   display: block;
 }
 .jr-card-theme-default .jr-display-name,
@@ -104,6 +104,7 @@ body {
   bottom: 5px;
   left: 170px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 .jr-card-theme-default .jr-designation,
 .jr-card-theme-minimal .jr-designation {
@@ -114,7 +115,7 @@ body {
 .jr-card-theme-minimal .jr-designation > span {
   display: inline-block;
   padding-top: 5px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ddd;
 }
 .jr-card-theme-default .jr-experience-info,
 .jr-card-theme-minimal .jr-experience-info {
@@ -140,7 +141,7 @@ body {
 .jr-card-theme-minimal .jr-header,
 .jr-card-theme-default .jr-footer,
 .jr-card-theme-minimal .jr-footer {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
 }
 .jr-card-theme-default .jr-content,
 .jr-card-theme-minimal .jr-content {
@@ -150,7 +151,7 @@ body {
 .jr-card-theme-minimal .jr-stats {
   display: table;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
   padding: 20px;
 }
 .jr-card-theme-default .jr-stats .jr-stat,
@@ -160,7 +161,7 @@ body {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #ddd;
 }
 .jr-card-theme-default .jr-stats .jr-stat > span,
 .jr-card-theme-minimal .jr-stats .jr-stat > span {
@@ -177,7 +178,7 @@ body {
 }
 .jr-card-theme-default .jr-about,
 .jr-card-theme-minimal .jr-about {
-  padding: 20px;
+  padding: 10px;
 }
 .jr-card-theme-default .jr-footer,
 .jr-card-theme-minimal .jr-footer {
@@ -205,83 +206,16 @@ body {
   text-align: center;
   border-bottom: 0;
 }
-.jr-card-theme-default .jr-social-links,
-.jr-card-theme-minimal .jr-social-links {
+.jr-card-theme-default .jr-citas,
+.jr-card-theme-minimal .jr-citas {
   padding: 20px 0;
+  text-align: left;
 }
-.jr-card-theme-default .jr-social-links .jr-social-link,
-.jr-card-theme-minimal .jr-social-links .jr-social-link {
+.jr-card-theme-default .jr-citas .jr-citas,
+.jr-card-theme-minimal .jr-citas .jr-citas {
   display: inline-block;
   font-size: 1.5em;
   margin-right: 10px;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-linkedin,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-linkedin {
-  color: #007bb6;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-linkedin:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-linkedin:hover {
-  color: #005983;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-github,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-github {
-  color: #454545;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-github:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-github:hover {
-  color: #2b2b2b;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-stack-overflow,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-stack-overflow {
-  color: #8e8e92;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-stack-overflow:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-stack-overflow:hover {
-  color: #747479;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-codepen,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-codepen {
-  color: #1c1c1c;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-codepen:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-codepen:hover {
-  color: #020202;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-twitter,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-twitter {
-  color: #33ccff;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-twitter:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-twitter:hover {
-  color: #00bfff;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-facebook,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-facebook {
-  color: #4b6daa;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-facebook:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-facebook:hover {
-  color: #3b5687;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-dribbble,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-dribbble {
-  color: #ce366f;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-dribbble:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-dribbble:hover {
-  color: #a82959;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-angellist,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-angellist {
-  color: #333333;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link .fa-angellist:hover,
-.jr-card-theme-minimal .jr-social-links .jr-social-link .fa-angellist:hover {
-  color: #1a1a1a;
-}
-.jr-card-theme-default .jr-social-links .jr-social-link:last-child,
-.jr-card-theme-minimal .jr-social-links .jr-social-link:last-child {
-  margin-right: 0;
 }
 .jr-card-theme-default .jr-profile-link,
 .jr-card-theme-minimal .jr-profile-link {
@@ -307,4 +241,17 @@ body {
 }
 .so-card-theme-minimal .so-profile-picture-container {
   display: none;
+}
+.picture-container-citas img{
+    border: 5px solid #ffffff;
+    width: 50px;
+    border-radius: 50%;
+}
+.jr-stat-a{
+    text-align: right;
+    width: 100%;
+    padding: 20px;
+}
+.color-citas-icon{
+    color: #ccc;
 }
