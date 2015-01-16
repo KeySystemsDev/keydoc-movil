@@ -1,11 +1,17 @@
+  <ion-nav-bar>
+ 
+</ion-nav-bar>
 <ion-view view-title="Estados">
+ <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> Back
+  </ion-nav-back-button>
   <ion-content>
     <ion-list>
 
-      <ion-item class="item-avatar item-icon-right" ng-repeat="estado in estados" type="item-text-wrap" >
+      <ion-item class="item-avatar item-icon-right" ng-repeat="estado in estados" type="item-text-wrap"  href="#municipios">
         <img ng-src="{{estado.icons}}">
         <h2>{{estado.name}}</h2>
-        <a href="#municipios"><i class="icon ion-chevron-right icon-accessory" ></i><a>
+        <a><i class="icon ion-chevron-right icon-accessory" ></i><a>
       </ion-item>
     
     </ion-list>
