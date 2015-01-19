@@ -1,32 +1,52 @@
 <ion-view view-title="Perfil">
-    <ion-content>
+  <ion-content>
 		<div class="jr-card-theme-default">
-  <div class="jr-card">
-    <div class="jr-header">
-      <div class="jr-cover">
-        <div class="jr-profile-picture-container"><img src="img/ionic.png"/></div>
-        <h2 class="jr-display-name">Ionic User</h2>
-      </div>
-      <div class="jr-experience-info">
-        <p><small><i class="icon ion-ios7-location"></i> Venezuela, Los Teques</small></p>
-        <p><small><i class="icon ion-ios7-email"></i> ionic@ionic.com</small></p>
-        <p>Javascript Frontend Engineer at Recruiterbox</p>
-      </div>
-    </div>
-    <div class="jr-content">
-      <div class="jr-stats">
-        <div class="jr-stat"><span><span class="jr-numbers">5</span><br/><small><i class="icon ion-ios7-medkit"></i> CITAS</small></span></div>
-        <div class="jr-stat"><span><span class="jr-numbers">3</span><br/><small><i class="icon ion-ios7-person"></i> DOCTORES</small></span></div>
-      </div>
-      <div class="jr-about">
-      </div>
-    </div>
+      <div class="jr-card">
+        
+        <div id="banner"/></div>
+
+        <ion-slide-box show-pager="true">
+
+              <ion-slide>
+                <div class="profile-picture"><img src="img/ionic.png"/></div>
+                <div class="box-white"><h2>Ionic User</h2></div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box-white"><p>Javascript Frontend Engineer at Recruiterbox</p></div>
+                <div class="box-white"><h4>Venezuela, Los Teques</h4></div>
+              </ion-slide>
+          
+            </ion-slide-box>
+
+        <div class="jr-header">
     
-    <div class="jr-footer">
-      <div class="jr-cita">
-        <div class="jr-citas"><i class="icon ion-ios7-medkit"></i> CITAS</div>  		
-      </div>
-    </div>
+        </div>
+        <!--<div class="jr-header">
+          <div class="jr-cover">
+            <div class="jr-profile-picture-container"><img src="img/ionic.png"/></div>
+            <h2 class="jr-display-name">Ionic User</h2>
+          </div>
+          <div class="jr-experience-info">
+            <p><small><i class="icon ion-ios7-location"></i> Venezuela, Los Teques</small></p>
+            <p><small><i class="icon ion-ios7-email"></i> ionic@ionic.com</small></p>
+            <p>Javascript Frontend Engineer at Recruiterbox</p>
+          </div>
+        </div>-->
+        
+        <div class="jr-content">
+          <div class="jr-stats">
+            <div class="jr-stat"><span><span class="jr-numbers">5</span><br/><small><i class="icon ion-ios7-medkit"></i> CITAS</small></span></div>
+            <div class="jr-stat"><span><span class="jr-numbers">3</span><br/><small><i class="icon ion-ios7-person"></i> DOCTORES</small></span></div>
+          </div>
+          <div class="jr-about">
+          </div>
+        </div>
+        
+        <div class="jr-footer">
+          <div class="jr-cita">
+            <div class="jr-citas"><i class="icon ion-ios7-medkit"></i> CITAS</div>  		
+          </div>
+        </div>
     
 
     <!-- <ion-item class="item-avatar item-icon-right" ng-repeat="cita in citas" type="item-text-wrap" >

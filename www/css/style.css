@@ -234,7 +234,7 @@ body {
   margin-top: -50px;
 }
 .jr-card-theme-default .jr-profile-picture-container img {
-  border: 5px solid #ffffff;
+  border: 5px solid blue;
   display: inline-block;
   width: 80px;
   border-radius: 50%;
@@ -255,4 +255,46 @@ body {
 }
 .color-citas-icon{
     color: #ccc;
+}
+.slider {
+    height: 200px;
+}
+.slider-slide {
+    padding-top: 30px;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+
+    /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;*/
+}
+
+.slider-pager .slider-pager-page{
+    color: #fff;
+    width: 7px;
+}
+.slider-pager-page i{
+    font-size: 7px;
+}
+.profile-picture img{
+    border: 5px solid #fff;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    /*border-radius: 50%;*/
+    vertical-align: middle;
+}
+.box-white h2, p, h4{
+    color: white;
+    margin-top: 10px;
+    /*text-shadow: 2px 0px 0px #000;*/
+}
+#banner{
+  width: 100%;
+  height: 200px;
+  padding: 0px;
+  margin: 0px;
+  background: #387ef5;
+  position: absolute;
+  top: 0px;
 }
