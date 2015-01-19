@@ -39,12 +39,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // setup an abstract state for the tabs directive
     .state('tab', {
-    url: "/tab",
-    abstract: true,
-    templateUrl: "templates/tabs.html"
+        url: "/tab",
+        abstract: true,
+        templateUrl: "templates/tabs.html"
   })
 
   // Each tab has its own nav history stack:
+
+    .state('tab.citas', {
+        url: '/citas',
+        views: {
+            'tab-citas': {
+                templateUrl: 'templates/tab-citas.html',
+                controller: 'CitasCtrl'
+            }
+        }
+    })
+    .state('tab.estados', {
+        url: '/estados',
+        views: {
+            'tab-citas':{
+                templateUrl: 'templates/estados.html',
+                controller: 'EstadosCtrl'
+            }
+        }
+    })
+    .state('tab.municipios', {
+        url: '/municipios',
+        views: {
+            'tab-citas':{    
+                templateUrl: 'templates/municipios.html',
+                controller: 'MunicipiosCtrl'
+            }
+        }
+    })
+    .state('tab.doctores', {
+        url: '/doctores',
+        views:{
+            'tab-citas':{
+                templateUrl: 'templates/doctores.html',
+                controller: 'DoctoresCtrl'
+            } 
+        }    
+    })
+    .state('tab.horarios', {
+        url: '/horarios',
+        views:{
+            'tab-citas':{
+                templateUrl: 'templates/horarios.html',
+                controller: 'HorariosCtrl'
+            }
+        }
+    })
 
   .state('tab.perfil', {
     url: '/perfil',
@@ -83,40 +129,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatDetailCtrl'
         }
       }
-    })
-
-  .state('tab.citas', {
-      url: '/citas',
-      views: {
-        'tab-citas': {
-          templateUrl: 'templates/tab-citas.html',
-          controller: 'CitasCtrl'
-        }
-      }
-    })
-  
-  .state('estados', {
-      url: '/estados',
-      templateUrl: 'templates/estados.html',
-      controller: 'EstadosCtrl'
-    })
-
-  .state('municipios', {
-      url: '/municipios',
-      templateUrl: 'templates/municipios.html',
-      controller: 'MunicipiosCtrl'
-    })
-
-  .state('doctores', {
-      url: '/doctores',
-      templateUrl: 'templates/doctores.html',
-      controller: 'DoctoresCtrl'
-    })
-
-  .state('horarios', {
-      url: '/horarios',
-      templateUrl: 'templates/horarios.html',
-      controller: 'HorariosCtrl'
     })
 
     .state('tab.friend-detail', {
