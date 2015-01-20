@@ -93,14 +93,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
 
   .state('tab.perfil', {
-    url: '/perfil',
-    views: {
-      'tab-perfil': {
-        templateUrl: 'templates/tab-perfil.html',
-        controller: 'PerfilCtrl'
-      }
-    }
+      url: '/perfil',
+        views: {
+            'tab-perfil': {
+            templateUrl: 'templates/tab-perfil.html',
+            controller: 'PerfilCtrl'
+            }
+        }
   })
+
+  
 
   .state('tab.search', {
     url: '/search',
