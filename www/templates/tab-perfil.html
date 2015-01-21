@@ -57,16 +57,67 @@
         <a href="#"><i class="icon ion-chevron-right icon-accessory" ></i><a>
     </ion-item> -->
   </div>
+<!--
+  <div class="list card">
+                <div class="item item-avatar">
+                  <img src="http://lorempixel.com/200/200/people">
+                  <h2>Lorem ipsum</h2>
+                  <p>Especialidad</p>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-clock"></i>
+                    Hora
+                  </a>
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-calendar"></i>
+                    Fecha
+                  </a>
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-home"></i>
+                    Consultorio
+                  </a>
+                </div>
+              </div>
 
-  	<div class="jr-content">
-      <div class="jr-stats" ng-repeat="cita in citas">
-        <div class="jr-stat"><span><span class="jr-numbers"><div class="picture-container-citas"><img src="img/ionic.png"/></div></div>
-        <div class="jr-stat">Doctor: {{cita.doctor}}</div>
-        <div class="jr-stat">Hora: {{cita.hora}}</div>
-        <div class="jr-stat">Fecha: {{cita.fecha}}</div>
-        <div class="jr-stat-a"><div><a href="#"><i class="icon ion-chevron-right icon-accessory color-citas-icon" ></i><a></div></div>
-      </div>
-    </div>
+  <div class="list card">
+                <div class="item item-avatar">
+                  <img src="http://lorempixel.com/200/200/people">
+                  <h2>Lorem ipsum</h2>
+                  <p>June 05, 2014</p>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                  </a>
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    Comment
+                  </a>
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    Share
+                  </a>
+                </div>
+              </div>-->
+
+            <ion-list>
+      <ion-item class="item-remove-animate item-avatar" ng-repeat="cita in citas" type="item-text-wrap" href="##/tab/citas/{{cita.id}}">
+        <img ng-src="{{cita.icons}}">
+        <h2>{{cita.doctor}}</h2>
+        <p>
+            <a class="mhfc"><i class="icon ion-clock"> {{cita.hora}} </i></a>
+            <a class="mhfc"><i class="icon ion-calendar"> {{cita.fecha}} </i></a>
+            <a class="mhfc"><i class="icon ion-home"> Consultorio </i></a>
+        </p>
+   
+        <ion-option-button class="button-assertive" ng-click="remove(cita)">
+          Cancelar
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  
 
 </div>
     </ion-content>

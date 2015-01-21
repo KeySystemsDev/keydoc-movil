@@ -13,6 +13,10 @@ angular.module('starter.controllers', [])
 
 .controller('PerfilCtrl', function($scope, Citas) {
     $scope.citas = Citas.all();
+  
+  $scope.remove = function(cita) {
+    Citas.remove(cita);
+  }
 })
 
 .controller('SearchCtrl', function($scope, Doctores) {

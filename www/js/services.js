@@ -381,6 +381,9 @@ angular.module('starter.services', [])
     all: function() {
       return citas;
     },
+    remove: function(cita) {
+      citas.splice(citas.indexOf(cita), 1);
+    },
     get: function(citasId) {
       // Simple index lookup
       return citas[citasId];

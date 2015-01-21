@@ -183,7 +183,7 @@ body {
 }
 .jr-card-theme-default .jr-footer,
 .jr-card-theme-minimal .jr-footer {
-  padding-left: 60px;
+  /*padding-left: 60px;*/
 }
 .jr-card-theme-default .jr-header,
 .jr-card-theme-minimal .jr-header {
@@ -209,8 +209,11 @@ body {
 }
 .jr-card-theme-default .jr-citas,
 .jr-card-theme-minimal .jr-citas {
-  padding: 20px 0;
-  text-align: left;
+  	transform: translate3d(0, 0, 0);
+	border-color: #b2b2b2;
+	background-color: #f8f8f8;
+  	padding: 15px 0;
+  	text-align: center;
 }
 .jr-card-theme-default .jr-citas .jr-citas,
 .jr-card-theme-minimal .jr-citas .jr-citas {
@@ -322,4 +325,14 @@ body {
 .jr-stat:active{
 	border-color: #ccc;
 	background-color: #D9D9D9;
+}
+
+.tabs-icon-left.tabs .tab-item, .tabs-icon-left > .tabs .tab-item, .tabs-icon-right.tabs .tab-item, .tabs-icon-right > .tabs .tab-item{
+	font-size: 12px;
+}
+.tabs-icon-left.tabs .tab-item .icon:before, .tabs-icon-left > .tabs .tab-item .icon:before, .tabs-icon-right.tabs .tab-item .icon:before, .tabs-icon-right > .tabs .tab-item .icon:before{
+	font-size: 19px;
+}
+.mhfc{
+	margin-right: 20px;
 }
