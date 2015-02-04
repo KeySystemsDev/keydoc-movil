@@ -43,8 +43,15 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('NotificationCtrl', function($scope) {
+.controller('NotificationCtrl', function($scope,$http, dataResource) {
     console.log('NotificationCtrl');
+    $http.get('http://keydoc.com.ve/movil/citas/especialidades').success(function (data) {
+        //Convert data to array.
+        //datos lo tenemos disponible en la vista gracias a $scope
+        $scope.datos = data;
+    });
+    //datosResource lo tenemos disponible en la vista gracias a $scope
+    $scope.datosResource = dataResource.get();
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
