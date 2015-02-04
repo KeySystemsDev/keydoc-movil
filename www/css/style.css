@@ -351,9 +351,6 @@ body {
     right: 70px;
 }
 
-.icon-llamar a:link   {
-    color: #11c1f3;
-}
-.icon-llamar a:hover  {
-    color: #11c1f3;
+.telephone a:link   {
+    color: blue;
 }
