@@ -114,6 +114,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+    .state('tab.notification', {
+      url: '/notification',
+      views: {
+        'tab-notification': {
+          templateUrl: 'templates/tab-notification.html',
+          controller: 'NotificationCtrl'
+        }
+      }
+    })
+
   .state('tab.chats', {
       url: '/chats',
       views: {

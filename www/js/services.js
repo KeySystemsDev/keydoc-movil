@@ -249,27 +249,27 @@ angular.module('starter.services', [])
     id: 0,
     name: 'doctores 1',
     summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    icons: 'img/ionic.png'
+    icons: 'img/upload.png'
   }, {
     id: 1,
     name: 'doctores 2',
     summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    icons: 'img/ionic.png'
+    icons: 'img/upload.png'
   }, {
     id: 2,
     name: 'doctores 3',
     summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    icons: 'img/ionic.png'
+    icons: 'img/upload.png'
   }, {
     id: 3,
     name: 'doctores 4',
     summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    icons: 'img/ionic.png'
+    icons: 'img/upload.png'
   }, {
     id: 4,
     name: 'doctores 5',
     summary: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    icons: 'img/ionic.png'
+    icons: 'img/upload.png'
   }];
 
 
