@@ -1,13 +1,41 @@
 angular.module('starter.controllers', [])
 
-.controller('InitKey', function($scope, $state) {
+.controller('InitKey', function($scope, $state, $http) {
   $scope.selected = "2";
 
-  $scope.signIn = function(user) {
-    //console.log('Sign-In', user);
+  
 
+  $scope.signIn = function(user,password) {
+    console.log('Sign-In', user);
+
+    
+
+    /*$http.get('http://keydoc.com.ve/movil/sesion/conectar',
+            { i_usuario: "doctorbronce@keydoc.com.ve", i_password: "12345678" }).success(function (data) {
+        //Convert data to array.
+        //datos lo tenemos disponible en la vista gracias a $scope
+        $scope.datos = data;
+        console.log('*----------*');
+        console.log($scope.datos);
+    }); */
+    datos = $('#form').serialize();
+    $.ajax({
+        type: 'GET',
+        url: 'http://keydoc.com.ve/movil/sesion/conectar',
+        data: datos,
+        datatType: 'json',
+        success: function (data) {
+            $scope.datos = JSON.parse(data);
+            console.log($scope.datos);
+                 
+        },
+    }); 
+
+    
     $state.go('tab.citas');
   };
+
+  
 
 })
 
@@ -43,8 +71,16 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('NotificationCtrl', function($scope) {
+.controller('NotificationCtrl', function($scope,$http, dataResource) {
     console.log('NotificationCtrl');
+    $http.get('http://keydoc.com.ve/movil/citas/especialidades').success(function (data) {
+        //Convert data to array.
+        //datos lo tenemos disponible en la vista gracias a $scope
+        $scope.datos = data;
+        //console.log($scope.datos);
+    });
+    //datosResource lo tenemos disponible en la vista gracias a $scope
+    $scope.datosResource = dataResource.get();
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
