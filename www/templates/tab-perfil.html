@@ -4,7 +4,7 @@
       <div class="jr-card">
         
         <div id="banner"/>
-          <img src="" alt="">
+          <img src="http://keydoc.com.ve/public/libs/pagina/img/header-bg.jpg" alt="">
         </div>
 
         <ion-slide-box show-pager="true">
@@ -18,7 +18,7 @@
               </ion-slide>
             </ion-slide-box>
 
-        <div class="jr-header"></div>
+        
         <!--<div class="jr-header">
           <div class="jr-cover">
             <div class="jr-profile-picture-container"><img src="img/ionic.png"/></div>
@@ -30,7 +30,9 @@
             <p>Javascript Frontend Engineer at Recruiterbox</p>
           </div>
         </div>-->
-        
+
+        <!-- Seguidos y citas
+        <div class="jr-header"></div>
         <div class="jr-content">
           <div class="jr-stats">
             <a class="jr-stat" href="#"><span><span class="jr-numbers">5</span><br/><small><i class="icon ion-ios7-medkit"></i> CITAS</small></span></a>
@@ -44,7 +46,7 @@
           <div class="jr-cita">
             <div class="jr-citas"><i class="icon ion-ios7-medkit"></i> CITAS</div>  		
           </div>
-        </div>
+        </div>-->
     
 
     <!-- <ion-item class="item-avatar item-icon-right" ng-repeat="cita in citas" type="item-text-wrap" >
@@ -55,8 +57,8 @@
 	        <h3>Fecha: {{cita.fecha}}</h3>
 	    <div/>
         <a href="#"><i class="icon ion-chevron-right icon-accessory" ></i><a>
-    </ion-item> -->
-  </div>
+    </ion-item> 
+  </div>-->
 <!--
   <div class="list card">
                 <div class="item item-avatar">
@@ -80,7 +82,7 @@
                 </div>
               </div>
 
-  <div class="list card">
+              <div class="list card">
                 <div class="item item-avatar">
                   <img src="http://lorempixel.com/200/200/people">
                   <h2>Lorem ipsum</h2>
@@ -102,23 +104,46 @@
                 </div>
               </div>-->
 
+            <!-- Citas
             <ion-list>
-      <ion-item class="item-remove-animate item-avatar" ng-repeat="cita in citas" type="item-text-wrap" href="##/tab/citas/{{cita.id}}">
-        <img ng-src="{{cita.icons}}">
-        <h2>{{cita.doctor}}</h2>
-        <p>
-            <a class="mhfc"><i class="icon ion-clock"> {{cita.hora}} </i></a>
-            <a class="mhfc"><i class="icon ion-calendar"> {{cita.fecha}} </i></a>
-            <a class="mhfc"><i class="icon ion-home"> Consultorio </i></a>
-        </p>
-   
-        <ion-option-button class="button-assertive" ng-click="remove(cita)">
-          Cancelar
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
-  
+              <ion-item class="item-remove-animate item-avatar" ng-repeat="cita in citas" type="item-text-wrap" href="##/tab/citas/{{cita.id}}">
+                <img ng-src="{{cita.icons}}">
+                <h2>{{cita.doctor}}</h2>
+                <p>
+                    <a class="mhfc"><i class="icon ion-clock"> {{cita.hora}} </i></a>
+                    <a class="mhfc"><i class="icon ion-calendar"> {{cita.fecha}} </i></a>
+                    <a class="mhfc"><i class="icon ion-home"> Consultorio </i></a>
+                </p>
+           
+                <ion-option-button class="button-assertive" ng-click="remove(cita)">
+                  Cancelar
+                </ion-option-button>
+              </ion-item>
+            </ion-list>
+        </div>-->
 
-</div>
+        <list class="list">
+
+          <item class="item item-icon-left" href="#">
+            <i class="icon ion-email"></i>
+            cespinoza@ks.com.ve
+          </item>
+
+          <item class="item item-icon-left" href="#">
+            <i class="icon ion-chatbubble-working"></i>
+            +58 412 704 27 74
+            <div class="icon-llamar">
+                <a href="#"><i class="icon ion-ios7-telephone-outline"></i></a>
+            </div>
+          </item>
+
+          <item class="item item-icon-left" href="#">
+            <i class="icon ion-person-stalker"></i>
+            Doctores
+            <span class="badge badge-calm">0</span>
+          </item>
+
+        </list>
+
     </ion-content>
 </ion-view>
