@@ -1,41 +1,77 @@
 angular.module('starter.controllers', [])
 
-.controller('InitKey', function($scope, $state, $http) {
-  $scope.selected = "2";
+.controller('InitKey', function($scope, $state, $http, $window) {
+    $scope.selected = "2";
 
-  
+    $scope.hola = "HOLA";
 
-  $scope.signIn = function(user,password) {
-    console.log('Sign-In', user);
+    $scope.signIn = function(user,password) {
+        console.log('Sign-In', user);
 
     
 
-    /*$http.get('http://keydoc.com.ve/movil/sesion/conectar',
-            { i_usuario: "doctorbronce@keydoc.com.ve", i_password: "12345678" }).success(function (data) {
-        //Convert data to array.
-        //datos lo tenemos disponible en la vista gracias a $scope
-        $scope.datos = data;
-        console.log('*----------*');
-        console.log($scope.datos);
-    }); */
-    datos = $('#form').serialize();
-    $.ajax({
-        type: 'GET',
-        url: 'http://keydoc.com.ve/movil/sesion/conectar',
-        data: datos,
-        datatType: 'json',
-        success: function (data) {
-            $scope.datos = JSON.parse(data);
+        /*$http.get('http://keydoc.com.ve/movil/sesion/conectar',
+                { i_usuario: "doctorbronce@keydoc.com.ve", i_password: "12345678" }).success(function (data) {
+            //Convert data to array.
+            //datos lo tenemos disponible en la vista gracias a $scope
+            $scope.datos = data;
+            console.log('*----------*');
             console.log($scope.datos);
-                 
-        },
-    }); 
+        }); */
+        datos = $('#form').serialize();
+        console.log(datos);   
+        $.ajax({
+            type: 'GET',
+            url: 'http://keydoc.com.ve/movil/sesion/conectar',
+            data: datos,
+            //datatType: 'json',
+            success: function (data) {
+                $scope.datos_usuario = JSON.parse(data);
+                console.log('datos_usuario:');
+                console.log($scope.datos_usuario);        
+            },
+        });  
+        $state.go('tab.citas');
+        };
 
     
-    $state.go('tab.citas');
-  };
+    /*$scope.user = {};
+    $scope.createUser = function() {
+        var hola = $http({
+            method : 'GET',
+            url : 'http://keydoc.com.ve/movil/sesion/conectar',
+            data : $scope.user
+        })
+        $scope.datos_usuario = hola;
 
-  
+
+        console.log($scope.datos_usuario);
+        console.log($scope.user);   
+        };*/
+
+    $scope.user = {};
+        
+    
+          $scope.message = '';
+          $scope.submit = function () {
+            $http
+              .get('http://keydoc.com.ve/movil/sesion/conectar', $scope.user)
+              .success(function (data, status, headers, config) {
+                $window.sessionStorage.token = data.token;
+                $scope.message = 'Welcome';
+                console.log($scope.user);
+                alert(data);
+              })
+              .error(function (data, status, headers, config) {
+                // Erase the token if the user fails to log in
+                delete $window.sessionStorage.token;
+
+                // Handle login errors here
+                $scope.message = 'Error: Invalid user or password';
+                console.log($scope.message);
+              });
+          };
+
 
 })
 

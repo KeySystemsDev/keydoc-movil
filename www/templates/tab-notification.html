@@ -25,10 +25,10 @@
         </ion-list>
 
         <div class="row">
-            <h1 class="subheader">Consumir un json con $http en AngularJS</h1>
+            <h1 class="subheader">Consumir un json con $http en AngularJS {{hola}}</h1>
             <ul class="panel callout radius">
-                <li ng-repeat="data in datos">
-                    <p style="color:blue;">cantidad_doctores: {{ data.cantidad_doctores }} cantidad_horario: {{ data.cantidad_horario }} nombre_especialidad: {{ data.nombre_especialidad }}</p>
+                <li ng-repeat="data in datos_usuario">
+                    <p style="color:blue;">correo_usuario: {{ data.correo_usuario }} cantidad_horario: {{ data.nombre_perfil }} nombre_especialidad: {{ data.nombre_especialidad }}</p>
                 </li>
             </ul>
  
@@ -39,5 +39,20 @@
                 </li>
             </ul>
         </div>
+
+        <form ng-submit="submit()">
+
+            <legend>Create User</legend>
+
+            <label>Name</label> 
+            <input type="text" id="i_usuario" name="i_usuario" ng-model="user.i_usuario" > 
+
+            <label>Password</label>
+            <input type="text" id="i_password" name="i_password" ng-model="user.i_password" >
+
+            <button type="submit" class="btn btn-primary">Register</button>
+
+        </form>
+        
     </ion-content>
 </ion-view>
