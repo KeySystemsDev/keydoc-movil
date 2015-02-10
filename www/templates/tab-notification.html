@@ -27,7 +27,7 @@
         <div class="row">
             <h1 class="subheader">Consumir un json con $http en AngularJS {{hola}}</h1>
             <ul class="panel callout radius">
-                <li ng-repeat="data in datos_usuario">
+                <li ng-repeat="data in datos">
                     <p style="color:blue;">correo_usuario: {{ data.correo_usuario }} cantidad_horario: {{ data.nombre_perfil }} nombre_especialidad: {{ data.nombre_especialidad }}</p>
                 </li>
             </ul>
@@ -53,6 +53,9 @@
             <button type="submit" class="btn btn-primary">Register</button>
 
         </form>
+            
+
+            <button ng-click="login()" class="btn">login</button>
         
     </ion-content>
 </ion-view>

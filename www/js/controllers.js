@@ -1,9 +1,21 @@
 angular.module('starter.controllers', [])
 
-.controller('InitKey', function($scope, $state, $http, $window) {
+.factory('Bookmark',function($resource){ //Step 2
+    //Step 3
+    return $resource('http://keydoc.com.ve/movil/sesion/conectar/');
+})
+
+//http://keydoc.com.ve/movil/sesion/conectar?i_usuario=doctorbronce%40keydoc.com.ve&i_password=12345678
+.controller('InitKey', function($scope, $state, $http, $window, login, Bookmark) {
     $scope.selected = "2";
 
     $scope.hola = "HOLA";
+
+    $scope.login = login.get();
+    //console.log($scope.login);
+
+    $scope.bookmarks = Bookmark.query();
+    //console.log($scope.bookmarks);
 
     $scope.signIn = function(user,password) {
         console.log('Sign-In', user);
@@ -26,9 +38,10 @@ angular.module('starter.controllers', [])
             data: datos,
             //datatType: 'json',
             success: function (data) {
-                $scope.datos_usuario = JSON.parse(data);
-                console.log('datos_usuario:');
-                console.log($scope.datos_usuario);        
+                $scope.datos = JSON.parse(data);
+                //console.log('datos_usuario:');
+                console.log($scope.datos);
+                //console.log(angular.fromJson(data));        
             },
         });  
         $state.go('tab.citas');
@@ -55,11 +68,15 @@ angular.module('starter.controllers', [])
           $scope.message = '';
           $scope.submit = function () {
             $http
-              .get('http://keydoc.com.ve/movil/sesion/conectar', $scope.user)
+              .post('http://keydoc.com.ve/movil/sesion/conectar', $scope.user)
               .success(function (data, status, headers, config) {
                 $window.sessionStorage.token = data.token;
                 $scope.message = 'Welcome';
                 console.log($scope.user);
+                console.log(data);
+                //console.log(status);
+                //console.log(headers);
+                //console.log(config);
                 alert(data);
               })
               .error(function (data, status, headers, config) {
@@ -71,8 +88,25 @@ angular.module('starter.controllers', [])
                 console.log($scope.message);
               });
           };
+     
+    $scope.login = function(){
+        console.log('login');
+        $scope.usuario = 'doctorbronce@keydoc.com.ve';
+        $scope.password = '12345678';
+        datos = $('#form').serialize();
+        console.log(datos);
 
+        $http({
+            method: 'POST',
+            url: 'http://keydoc.com.ve/movil/sesion/conectar',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: datos,    
+        }).success(function (data){
+            console.log('data-------');
+            console.log(data);
 
+        });
+    };
 })
 
 .controller('PerfilCtrl', function($scope, Citas) {
@@ -117,6 +151,7 @@ angular.module('starter.controllers', [])
     });
     //datosResource lo tenemos disponible en la vista gracias a $scope
     $scope.datosResource = dataResource.get();
+    console.log($scope.datosResource);
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
