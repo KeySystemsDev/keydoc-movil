@@ -404,7 +404,7 @@ angular.module('dataResource', ['ngResource'])
 angular.module('login', ['ngResource'])
 .factory("login", function ($resource) {
     return $resource("http://keydoc.com.ve/movil/sesion/conectar", //la url donde queremos consumir
-        {i_usuario: 'doctorbronce@keydoc.com.ve', i_pasword: '12345678'}, //aquí podemos pasar variables que queramos pasar a la consulta
+        {}, //aquí podemos pasar variables que queramos pasar a la consulta
         //a la función get le decimos el método, y, si es un array lo que devuelve
         //ponemos isArray en true
         { get: { method: "GET", isArray: true }
