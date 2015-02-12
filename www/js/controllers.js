@@ -1,120 +1,18 @@
 angular.module('starter.controllers', [])
 
-.factory('Bookmark',function($resource){ //Step 2
-    //Step 3
-    return $resource('http://keydoc.com.ve/movil/sesion/conectar/');
-})
-
-//http://keydoc.com.ve/movil/sesion/conectar?i_usuario=doctorbronce%40keydoc.com.ve&i_password=12345678
-.controller('InitKey', function($scope, $state, $http, $window, login, Bookmark) {
+.controller("InitCtrl", function($scope, $state, MyService, login) {
+    console.log('InitCtrl');
     $scope.selected = "2";
-
-    $scope.hola = "HOLA";
-
-    $scope.login = login;
-
-    $scope.bookmarks = Bookmark.query();
-    //console.log($scope.bookmarks);
-
-    //$scope.datos_usuario = login.get({'i_usuario': 'doctorbronce@keydoc.com.ve', 'i_password': '12345678'});
-    //console.log($scope.datos_usuario);
-
-    $scope.signIn = function(user) {
-        //console.log('Sign-In', user);
-        datos_usuario = login.get(user);
-        //console.log(datos_usuario)
-        
-        /*$http.get('http://keydoc.com.ve/movil/sesion/conectar',
-                { i_usuario: "doctorbronce@keydoc.com.ve", i_password: "12345678" }).success(function (data) {
-            //Convert data to array.
-            //datos lo tenemos disponible en la vista gracias a $scope
-            $scope.datos = data;
-            console.log('*----------*');
-            console.log($scope.datos);
-        }); */
-        // datos = $('#form').serialize();
-        // console.log(datos);   
-        // $.ajax({
-        //     type: 'GET',
-        //     url: 'http://keydoc.com.ve/movil/sesion/conectar',
-        //     data: datos,
-        //     //datatType: 'json',
-        //     success: function (data) {
-        //         $scope.datos = JSON.parse(data);
-        //         //console.log('datos_usuario:');
-        //         //console.log($scope.datos);
-        //         //console.log(angular.fromJson(data));        
-        //     },
-        // });  
+    $scope.login = function(user) {
+        MyService.data.login = login.get(user);;
         $state.go('tab.citas');
-        return datos_usuario;
     };
-
-    //console.log($scope.user);
-
-    //du = $scope.signIn($scope.user);
-
-
-    
-    /*$scope.user = {};
-    $scope.createUser = function() {
-        var hola = $http({
-            method : 'GET',
-            url : 'http://keydoc.com.ve/movil/sesion/conectar',
-            data : $scope.user
-        })
-        $scope.datos_usuario = hola;
-
-
-        console.log($scope.datos_usuario);
-        console.log($scope.user);   
-        };*/
-
-    $scope.user = {};
-        
-    
-          $scope.message = '';
-          $scope.submit = function () {
-            $http
-              .post('http://keydoc.com.ve/movil/sesion/conectar', $scope.user)
-              .success(function (data, status, headers, config) {
-                $window.sessionStorage.token = data.token;
-                $scope.message = 'Welcome';
-                console.log($scope.user);
-                console.log(data);
-                //console.log(status);
-                //console.log(headers);
-                //console.log(config);
-                alert(data);
-              })
-              .error(function (data, status, headers, config) {
-                // Erase the token if the user fails to log in
-                delete $window.sessionStorage.token;
-
-                // Handle login errors here
-                $scope.message = 'Error: Invalid user or password';
-                console.log($scope.message);
-              });
-          };
-     
-    $scope.login = function(){
-        //console.log('login');
-        $scope.usuario = 'doctorbronce@keydoc.com.ve';
-        $scope.password = '12345678';
-        datos = $('#form').serialize();
-        //console.log(datos);
-
-        $http({
-            method: 'GET',
-            url: 'http://keydoc.com.ve/movil/sesion/conectar',
-            //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            data: datos,    
-        }).success(function (data){
-            //console.log('data-------');
-            //console.log(data);
-
-        });
-    };
+})
+ 
+.controller("AppCtrl", function($scope, MyService) {
+    console.log('AppCtrl');
+    $scope.dato_session = MyService.data.login;
+    console.log($scope.dato_session);
 })
 
 .controller('PerfilCtrl', function($scope, Citas) {
@@ -149,17 +47,8 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('NotificationCtrl', function($scope,$http, dataResource) {
+.controller('NotificationCtrl', function($scope) {
     console.log('NotificationCtrl');
-    $http.get('http://keydoc.com.ve/movil/citas/especialidades').success(function (data) {
-        //Convert data to array.
-        //datos lo tenemos disponible en la vista gracias a $scope
-        $scope.datos = data;
-        //console.log($scope.datos);
-    });
-    //datosResource lo tenemos disponible en la vista gracias a $scope
-    $scope.datosResource = dataResource.get();
-    console.log($scope.datosResource);
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {

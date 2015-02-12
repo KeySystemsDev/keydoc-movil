@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','dataResource','login'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','login'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','d
        url: "/init-key",
        abstract: false,
        templateUrl: "templates/init-key.html",
-       controller: 'InitKey'
+       controller: 'InitCtrl'
   })
 
   // setup an abstract state for the tabs directive
@@ -119,7 +119,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','d
       views: {
         'tab-notification': {
           templateUrl: 'templates/tab-notification.html',
-          controller: 'InitKey'
+          controller: 'AppCtrl'
         }
       }
     })
