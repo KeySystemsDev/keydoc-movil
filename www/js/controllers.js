@@ -11,8 +11,29 @@ angular.module('starter.controllers', [])
  
 .controller("AppCtrl", function($scope, MyService) {
     console.log('AppCtrl');
-    $scope.dato_session = MyService.data.login;
+    $scope.dato_session = angular.fromJson(MyService.data.login);
     console.log($scope.dato_session);
+ 
+    
+    angular.forEach($scope.dato_session, function(dato_sessions) {
+        console.log(dato_sessions);
+        console.log('---------------');
+    });
+
+
+    $scope.todos = [
+    {text:'learn angular', done:true},
+    {text:'build an angular app', done:false}];
+    
+    console.log($scope.todos);
+
+    angular.forEach($scope.todos, function(todo) {
+        console.log(todo);
+        console.log('---------------');
+    });
+    
+
+    
 })
 
 .controller('PerfilCtrl', function($scope, Citas) {
