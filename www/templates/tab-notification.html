@@ -27,7 +27,11 @@
         <div class="row">
             <h1>Datos Session</h1>
             <h2>{{dato_session}}</h2>
-           
+            <ul class="panel callout radius">
+                <li ng-repeat="data in dato_session">
+                       <p style="color:blue;">Nombre: {{data.nombre_perfil}} Correo: {{data.correo_usuario}}</p>
+                </li>
+            </ul>
         </div>            
         
     </ion-content>

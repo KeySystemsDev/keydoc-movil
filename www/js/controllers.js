@@ -1,38 +1,81 @@
 angular.module('starter.controllers', [])
 
-.controller("InitCtrl", function($scope, $state, MyService, login) {
+.factory("dataResource", function ($resource) {
+    return $resource("http://keydoc.com.ve/movil/citas/especialidades", //la url donde queremos consumir
+        {}, //aquí podemos pasar variables que queramos pasar a la consulta
+        //a la función get le decimos el método, y, si es un array lo que devuelve
+        //ponemos isArray en true
+        { get: { method: "GET", isArray: true }
+    })
+})
+
+.controller("InitCtrl", function($scope, $state, MyService, login, dataResource) {
     console.log('InitCtrl');
     $scope.selected = "2";
+
+      data = [{"cantidad_horario":"1","nombre_especialidad":"odontolog\u00eda","id_tipo_especialidad":"407","cantidad_doctores":"1"}];
+      hola = [];
+      for (var i=0; i < data.length; i++){
+          //i === 0: arr[0] === undefined;
+          //i === 1: arr[1] === 'hola';
+          //i === 2: arr[2] === 'chau';
+          hola.push({
+            hola : data[0].nombre_especialidad,
+            umg : data[0].cantidad_horario
+          });
+          //console.log(hola);
+      }
+
+
+    //////////////////////////////////////////////
+    $scope.data = dataResource.get();
+    console.log($scope.data);
+
+    data = [{"cantidad_horario":"1","nombre_especialidad":"odontolog\u00eda","id_tipo_especialidad":"407","cantidad_doctores":"1"}];
+    console.log(data);
+
+    angular.forEach($scope.data, function(datas) {
+        console.log(datas);
+        console.log('---------------');
+    });
+    //////////////////////////////////////////////
     $scope.login = function(user) {
-        MyService.data.login = login.get(user);;
+        MyService.data.login = login.get(user);
         $state.go('tab.citas');
     };
 })
  
 .controller("AppCtrl", function($scope, MyService) {
     console.log('AppCtrl');
-    $scope.dato_session = angular.fromJson(MyService.data.login);
+    $scope.dato_session = MyService.data.login;
     console.log($scope.dato_session);
- 
+  
+
     
     angular.forEach($scope.dato_session, function(dato_sessions) {
-        console.log(dato_sessions);
-        console.log('---------------');
+        //console.log(dato_sessions);
+        //console.log('---------------');
     });
-
 
     $scope.todos = [
     {text:'learn angular', done:true},
     {text:'build an angular app', done:false}];
     
-    console.log($scope.todos);
+    //console.log($scope.todos);
 
     angular.forEach($scope.todos, function(todo) {
-        console.log(todo);
-        console.log('---------------');
+        //console.log(todo);
+        //console.log('---------------');
+        //localStorage.setItem("nombre", todo.text);
+        //localStorage.setItem("boleano", todo.done);
     });
     
-
+    hola = localStorage.getItem("nombre");
+    lol = localStorage.getItem("boleano");
+    //console.log(hola);
+    //console.log(lol);
+   
+    
     
 })
 
