@@ -119,7 +119,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
       views: {
         'tab-notification': {
           templateUrl: 'templates/tab-notification.html',
-          controller: 'AppCtrl'
+          controller: 'NotificationCtrl'
         }
       }
     })
