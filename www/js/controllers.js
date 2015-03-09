@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.factory("dataResource", function ($resource) {
+.factory("profilelist", function ($resource) {
     return $resource("http://keydoc.com.ve/movil/citas/especialidades", //la url donde queremos consumir
         {}, //aquí podemos pasar variables que queramos pasar a la consulta
         //a la función get le decimos el método, y, si es un array lo que devuelve
@@ -9,11 +9,11 @@ angular.module('starter.controllers', [])
     })
 })
 
-.controller("InitCtrl", function($scope, $state, MyService, login, dataResource) {
+.controller("InitCtrl", function($scope, $state, MyService, login, profilelist) {
     console.log('InitCtrl');
     $scope.selected = "2";
 
-      data = [{"cantidad_horario":"1","nombre_especialidad":"odontolog\u00eda","id_tipo_especialidad":"407","cantidad_doctores":"1"}];
+      /*data = [{"cantidad_horario":"1","nombre_especialidad":"odontolog\u00eda","id_tipo_especialidad":"407","cantidad_doctores":"1"}];
       hola = [];
       for (var i=0; i < data.length; i++){
           //i === 0: arr[0] === undefined;
@@ -24,14 +24,17 @@ angular.module('starter.controllers', [])
             umg : data[0].cantidad_horario
           });
           //console.log(hola);
-      }
+      }*/
 
 
     //////////////////////////////////////////////
-    $scope.data = dataResource.get();
+
+    $scope.data = profilelist.query();
+    console.log('resource');
     console.log($scope.data);
 
-    data = [{"cantidad_horario":"1","nombre_especialidad":"odontolog\u00eda","id_tipo_especialidad":"407","cantidad_doctores":"1"}];
+    data = [{"id_tipo":"1","id_maestro":"2","nombre_tipo":"lunes","id_tipo_dependiente":"0","habilitado_tipo":"1"}];
+    console.log('local');
     console.log(data);
 
     angular.forEach($scope.data, function(datas) {
@@ -39,8 +42,22 @@ angular.module('starter.controllers', [])
         console.log('---------------');
     });
     //////////////////////////////////////////////
+
+    $scope.profileslist = profilelist.get(function (response) {
+    angular.forEach(response, function () {
+        console.log($scope.profileslist[0].nombre_tipo);
+        localStorage.setItem('dia', $scope.profileslist[0].nombre_tipo)
+        });
+    });
+
     $scope.login = function(user) {
-        MyService.data.login = login.get(user);
+        MyService.data.login = login.get(user, function (dato) {
+            angular.forEach(dato, function () {
+                console.log(MyService.data.login[0].correo_usuario);
+                localStorage.setItem('correo_usuario', MyService.data.login[0].correo_usuario)
+            });
+        });
+        
         $state.go('tab.citas');
     };
 })
@@ -50,7 +67,8 @@ angular.module('starter.controllers', [])
     $scope.dato_session = MyService.data.login;
     console.log($scope.dato_session);
   
-
+    $scope.correo_usuario = localStorage.getItem('correo_usuario');
+    console.log($scope.correo_usuario);
     
     angular.forEach($scope.dato_session, function(dato_sessions) {
         //console.log(dato_sessions);
@@ -102,6 +120,8 @@ angular.module('starter.controllers', [])
         { title: 'Dr.Ericka Lorem iIpsum', id: 8 }
     ];
     
+    dia = localStorage.getItem('dia');
+    console.log(dia);
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
