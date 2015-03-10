@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
-.controller("InitCtrl", function($scope, $state, MyService, login) {
-    console.log('InitCtrl');
+.controller("InicioCtrl", function($scope, $state, MyService, login) {
+    console.log('InicioCtrl');
     $scope.selected = "2";
 
     $scope.login = function(user) {
@@ -17,11 +17,11 @@ angular.module('starter.controllers', [])
     };
 })
  
-.controller("AppCtrl", function($scope, MyService) {
+/*.controller("AppCtrl", function($scope, MyService) {
     console.log('AppCtrl');
     $scope.dato_session = MyService.data.login;
     //console.log($scope.dato_session);
-})
+})*/
 
 .controller('PerfilCtrl', function($scope, Citas) {
     $scope.citas = Citas.all();
@@ -59,22 +59,11 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
-
 .controller('NotificationCtrl', function($scope) {
     console.log('NotificationCtrl');
 
     $scope.correo_usuario = localStorage.getItem('correo_usuario');
     //console.log($scope.correo_usuario);
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('CitasCtrl', function($scope, Friends, Specialty) {
@@ -96,14 +85,4 @@ angular.module('starter.controllers', [])
 
 .controller('HorariosCtrl', function($scope, Horarios) {
     $scope.horarios = Horarios.all();
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
 });
