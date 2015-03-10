@@ -299,9 +299,8 @@ angular.module('starter.services', [])
   return {
     data: {}
   };
-});   
+})   
 
-angular.module('login', ['ngResource'])
 .factory("login", function ($resource) {
     return $resource("http://keydoc.com.ve/movil/sesion/conectar", //la url donde queremos consumir
         {}, //aquí podemos pasar variables que queramos pasar a la consulta
