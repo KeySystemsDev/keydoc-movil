@@ -102,7 +102,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
         }
   })
 
-  
+  .state('tab.opciones', {
+      url: '/opciones',
+        views: {
+            'tab-perfil': {
+            templateUrl: 'templates/tab-opciones.html',
+            //controller: 'PerfilCtrl'
+            }
+        }
+  })
 
   .state('tab.search', {
     url: '/search',
