@@ -107,7 +107,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
         views: {
             'tab-perfil': {
             templateUrl: 'templates/tab-opciones.html',
-            //controller: 'PerfilCtrl'
+            controller: 'OpcionesCtrl'
             }
         }
   })

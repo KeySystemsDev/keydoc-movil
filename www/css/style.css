@@ -354,3 +354,64 @@ body {
 .telephone a:link   {
     color: #6DD9F2;
 }
+
+.item-opciones{
+    min-height: 50px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+.icon-custon-tamano{
+    font-size: 10px;
+}
+/* top bar */
+.top-header{ 
+    height:6px;
+    background-image: -webkit-linear-gradient(left,
+        #d9534f 20%, 
+        #6f5499 20%, 
+        #6f5499 40%, 
+        #428bca 40%, 
+        #428bca 60%,
+        #f0ad4e 60%, 
+        #f0ad4e 80%, 
+        #5cb85c 80%);
+  background-image: -moz-linear-gradient(left,
+        #d9534f 20%, 
+        #6f5499 20%,
+        #6f5499 40%, 
+        #428bca 40%, 
+        #428bca 60%, 
+        #f0ad4e 60%, 
+        #f0ad4e 80%, 
+        #5cb85c 80%);
+    background-image: -ms-linear-gradient(left,
+        #d9534f 20%, 
+        #6f5499 20%, 
+        #6f5499 40%, 
+        #428bca 40%, 
+        #428bca 60%, 
+        #f0ad4e 60%, 
+        #f0ad4e 80%, 
+        #5cb85c 80%);
+    background-image: linear-gradient(left,
+        #d9534f 20%, 
+        #6f5499 20%, 
+        #6f5499 40%, 
+        #428bca 40%, 
+        #428bca 60%, 
+        #f0ad4e 60%,
+        #f0ad4e 80%, 
+        #5cb85c 80%);
+    background-size:100% 6px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+.item-key-systems{
+    padding: 18px;
+}
+.icon-key-side-menu{
+    top:5px;
+    margin-left: 15px;
+    width: 150px;
+    position: absolute;
+}

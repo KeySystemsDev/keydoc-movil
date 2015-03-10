@@ -35,6 +35,13 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('OpcionesCtrl', function($scope, $state) {
+
+    $scope.desconectar = function(cita) {
+        $state.go('initkey');
+    }
+})
+
 .controller('SearchCtrl', function($scope, Doctores) {
     
     $scope.doctores = Doctores.all();
