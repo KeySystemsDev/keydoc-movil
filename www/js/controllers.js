@@ -10,9 +10,10 @@ angular.module('starter.controllers', [])
                 localStorage.setItem('correo_usuario', MyService.data.login[0].correo_usuario);
                 localStorage.setItem('nombre_perfil', MyService.data.login[0].nombre_perfil);
                 localStorage.setItem('id_usuario', MyService.data.login[0].id_usuario);
+                localStorage.setItem('id_grupo', MyService.data.login[0].id_grupo);
             });
         });
-        
+
         $state.go('tab.citas');
     };
 })
@@ -23,12 +24,14 @@ angular.module('starter.controllers', [])
     //console.log($scope.dato_session);
 })*/
 
-.controller('PerfilCtrl', function($scope, Citas) {
-    $scope.citas = Citas.all();
-  
-    $scope.remove = function(cita) {
-        Citas.remove(cita);
-    }
+.controller('PerfilCtrl', function($scope, perfil_usuario) {
+ 
+    $scope.perfil_usuario = perfil_usuario.get({'id_usuario': localStorage.getItem('id_usuario')}, function (dato) {
+            angular.forEach(dato, function () {
+
+            });
+        });
+    console.log($scope.perfil_usuario);
 
     $scope.correo_usuario = localStorage.getItem('correo_usuario');
     $scope.nombre_perfil = localStorage.getItem('nombre_perfil');
@@ -59,11 +62,18 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('NotificationCtrl', function($scope) {
+.controller('NotificationCtrl', function($scope, notificaciones) {
     console.log('NotificationCtrl');
 
-    $scope.correo_usuario = localStorage.getItem('correo_usuario');
-    //console.log($scope.correo_usuario);
+    $scope.notificacion = notificaciones.get( {'id_grupo': localStorage.getItem('id_grupo'), 
+                                               'id_usuario': localStorage.getItem('id_usuario')}, function (dato) {
+            angular.forEach(dato, function () {
+                
+            });
+        });
+
+    console.log($scope.notificacion);
+
 })
 
 .controller('CitasCtrl', function($scope, Friends, Specialty) {
