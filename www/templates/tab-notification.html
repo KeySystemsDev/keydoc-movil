@@ -1,27 +1,26 @@
 <ion-view view-title="Notificaciones">
     <ion-content>
         <ion-list>
-            <item class="item item-remove-animate item-button-right item-avatar">
+            <a class="item item-remove-animate item-button-right item-avatar" ng-repeat="notificaciones in notificacion">
                 <img src="img/upload.png">
-                <h2>Dr.Pedro Perez</h2>
-                <p>Especialidad</p>
-                <button class="button button-balanced"><h4>Aceptado</h4></button>
-                <div class="time-cita"><i class="ion-clock"> 8:00 pm</i></div>
-            </item>
-            <item class="item item-remove-animate item-button-right item-avatar">
-                <img src="img/upload.png">
-                <h2>Dr.Pedro Perez</h2>
-                <p>Especialidad</p>
-                <button class="button button-energized"><h4>Pendiente</h4></button>
-                <div class="time-cita"><i class="ion-clock"> 8:00 pm</i></div>
-            </item>
-            <item class="item item-remove-animate item-button-right item-avatar">
-                <img src="img/upload.png">
-                <h2>Dr.Pedro Perez</h2>
-                <p>Especialidad</p>
-                <button class="button button-assertive"><h4>Rechazado</h4></button>
-                <div class="time-cita"><i class="ion-clock"> 8:00 pm</i></div>
-            </item>
+                <h2 class="mayuscula" ng-if="notificaciones.nombre_paciente == null">
+                    Dr. {{ notificaciones.nombre_doctor }}
+                </h2>
+                <h2 class="mayuscula" ng-if="notificaciones.nombre_doctor == null">
+                    {{ notificaciones.nombre_paciente }}
+                </h2>
+                <p class="mayuscula">{{ notificaciones.especialidad }}</p>
+                <button class="button button-balanced" ng-if="notificaciones.status_aprobado_cita == 1">
+                    <h4>Aceptado</h4>
+                </button>
+                <button class="button button-energized" ng-if="notificaciones.status_pendiente_cita == 1">
+                    <h4>Pendiente</h4>
+                </button>
+                <button class="button button-assertive" ng-if="notificaciones.status_rechazado_cita == 1">
+                    <h4>Rechazado</h4>
+                </button>
+                <div class="time-cita"><i class="ion-clock"></i> {{ notificaciones.hora_agenda }}</div>
+            </a>
         </ion-list>
     </ion-content>
 </ion-view>

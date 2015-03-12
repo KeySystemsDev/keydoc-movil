@@ -130,6 +130,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
           controller: 'NotificationCtrl'
         }
       }
+    })
+
+    .state('tab.notification-detalle', {
+      url: '/notification-detalle:id_cita',
+      views: {
+        'tab-notification': {
+          templateUrl: 'templates/tab-notification-detalle.html',
+          controller: 'NotificationDetalleCtrl'
+        }
+      }
     });
 
   // if none of the above states are matched, use this as the fallback

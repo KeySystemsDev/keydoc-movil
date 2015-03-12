@@ -81,6 +81,11 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('NotificationDetalleCtrl', function($scope, $stateParams,notificaciones) {
+    console.log('NotificationDetalleCtrl');
+    $scope.notificacion = notificaciones.get()
+})
+
 .controller('CitasCtrl', function($scope, Friends, Specialty) {
   $scope.friends = Friends.all();
   $scope.specialty = Specialty.all();

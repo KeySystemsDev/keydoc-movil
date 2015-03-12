@@ -418,3 +418,6 @@ body {
 input.ng-invalid.ng-touched {
     background-color: #FA787E;
 }
+.mayuscula{
+    text-transform: capitalize;
+}
