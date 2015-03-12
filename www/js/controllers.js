@@ -6,15 +6,14 @@ angular.module('starter.controllers', [])
 
     $scope.login = function(user) {
         MyService.data.login = login.get(user, function (dato) {
-            angular.forEach(dato, function () {
-                localStorage.setItem('correo_usuario', MyService.data.login[0].correo_usuario);
-                localStorage.setItem('nombre_perfil', MyService.data.login[0].nombre_perfil);
+            angular.forEach(dato, function () {                
                 localStorage.setItem('id_usuario', MyService.data.login[0].id_usuario);
                 localStorage.setItem('id_grupo', MyService.data.login[0].id_grupo);
             });
         });
-
+        
         $state.go('tab.citas');
+        
     };
 })
  
@@ -28,13 +27,19 @@ angular.module('starter.controllers', [])
  
     $scope.perfil_usuario = perfil_usuario.get({'id_usuario': localStorage.getItem('id_usuario')}, function (dato) {
             angular.forEach(dato, function () {
-
+                localStorage.setItem('correo_usuario', $scope.perfil_usuario[0].correo_usuario);
+                localStorage.setItem('nombre_perfil', $scope.perfil_usuario[0].nombre_perfil);
+                localStorage.setItem('telefono_perfil', $scope.perfil_usuario[0].telefono_perfil);
+                localStorage.setItem('url_imagen_perfil', $scope.perfil_usuario[0].url_imagen_perfil);
+                localStorage.setItem('direccion_perfil', $scope.perfil_usuario[0].direccion_perfil);
             });
         });
-    console.log($scope.perfil_usuario);
-
+    
     $scope.correo_usuario = localStorage.getItem('correo_usuario');
     $scope.nombre_perfil = localStorage.getItem('nombre_perfil');
+    $scope.telefono_perfil = localStorage.getItem('telefono_perfil');
+    $scope.url_imagen_perfil = localStorage.getItem('url_imagen_perfil');
+    $scope.direccion_perfil = localStorage.getItem('direccion_perfil');
 
 })
 

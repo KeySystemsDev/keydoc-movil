@@ -415,3 +415,6 @@ body {
     width: 150px;
     position: absolute;
 }
+input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+}

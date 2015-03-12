@@ -9,30 +9,32 @@
             <div class="jr-card">
         
                 <div id="banner"/>
-                    <img src="http://keydoc.com.ve/public/libs/pagina/img/header-bg.jpg" alt="">
+                    <img ng-src="http://keydoc.com.ve/public/libs/pagina/img/header-bg.jpg" alt="">
                 </div>
 
             <ion-slide-box show-pager="true">
                 <ion-slide>
-                    <div class="profile-picture"><img src="img/upload.png"/></div>
+                    <div class="profile-picture">
+                        <img ng-src="{{ 'http://keydoc.com.ve' + url_imagen_perfil }}"/>
+                    </div>
                     <div class="box-white"><h2>{{ nombre_perfil }}</h2></div>
                 </ion-slide>
                 <ion-slide>
-                    <div class="box-white"><p>Javascript Frontend Engineer at Recruiterbox</p></div>
-                    <div class="box-white"><h4>Venezuela, Los Teques</h4></div>
+                    <div class="box-white"><p>{{ direccion_perfil }}</p></div>
+                    <div class="box-white"><h4>Venezuela</h4></div>
                 </ion-slide>
             </ion-slide-box>
 
             <list class="list">
 
-                <item class="item item-icon-left" href="#">
+                <item class="item item-icon-left" ng-href="mailto:{{ correo_usuario }}">
                     <i class="icon ion-email"></i>
                         {{ correo_usuario }}
                 </item>
 
-                <item class="item item-icon-left" href="#">
+                <item class="item item-icon-left" ng-href="tel:{{ '+58 ' + telefono_perfil }}">
                     <i class="icon ion-ios7-telephone"></i>
-                        +58 412 704 27 74
+                        +58 {{ telefono_perfil }}
                     <div class="icon-llamar">
                     <a href="#" class="telephone"><i class="icon ion-chatbubble-working"></i></a>
                     </div>
