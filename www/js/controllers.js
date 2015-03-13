@@ -34,7 +34,7 @@ angular.module('starter.controllers', [])
                 localStorage.setItem('direccion_perfil', $scope.perfil_usuario[0].direccion_perfil);
             });
         });
-    
+
     $scope.correo_usuario = localStorage.getItem('correo_usuario');
     $scope.nombre_perfil = localStorage.getItem('nombre_perfil');
     $scope.telefono_perfil = localStorage.getItem('telefono_perfil');
@@ -67,23 +67,30 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('NotificationCtrl', function($scope, notificaciones) {
+.controller('NotificationCtrl', function($scope, notificaciones, MyService) {
     console.log('NotificationCtrl');
 
     $scope.notificacion = notificaciones.get( {'id_grupo': localStorage.getItem('id_grupo'), 
                                                'id_usuario': localStorage.getItem('id_usuario')}, function (dato) {
             angular.forEach(dato, function () {
-                
+
             });
         });
 
-    console.log($scope.notificacion);
-
+    MyService.notificacion = notificaciones.get( {'id_grupo': localStorage.getItem('id_grupo'), 
+                                               'id_usuario': localStorage.getItem('id_usuario')}, function (dato) {
+            angular.forEach(dato, function () {
+                
+            });
+        });
 })
 
-.controller('NotificationDetalleCtrl', function($scope, $stateParams,notificaciones) {
+.controller('NotificationDetalleCtrl', function($scope, $stateParams, MyService) {
     console.log('NotificationDetalleCtrl');
-    $scope.notificacion = notificaciones.get()
+    
+    $scope.noti = MyService.notificacion[0];
+    console.log($scope.noti);
+
 })
 
 .controller('CitasCtrl', function($scope, Friends, Specialty) {

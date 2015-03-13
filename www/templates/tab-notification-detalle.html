@@ -1,5 +1,48 @@
-<ion-view view-title="hola">
+<ion-view view-title="notificaciones">
     <ion-content>
-        <h1>{{notificacion}}</h1>
+        
+            <div class="row noti-datos">
+                <div class="row noti-datos-img-nombre">
+                    <div class="col">
+                        <img class="img-noti-doctor" src="img/upload.png">
+                    </div>
+                    <div class="col-80">
+                        <h4 class="noti-nombre">Dr. Carlos Espinoza</h4>
+                    </div>
+                </div>
+            </div>
+
+            <list class="list">
+
+                <item class="item item-icon-left" href="#">
+                    <i class="icon ion-heart"></i>
+                        Especialidad
+                </item>
+
+                <item class="item item-icon-left body-direccion" href="#">
+                    <i class="icon ion-android-pin"></i>
+                        Dirección
+                </item>
+
+                <item class="item item-icon-left" href="#">
+                    <i class="icon ion-android-calendar"></i>
+                        Fecha                 
+                </item>
+
+                <item class="item item-icon-left" href="#">
+                    <i class="icon ion-android-alarm-clock"></i>
+                        Hora                 
+                </item>
+
+                <div class="">
+                    <button class="button button-balanced">
+                    <h4>Aceptado</h4>
+                    </button>
+                </div>    
+                
+
+            </list>
+
+
     </ion-content>
 </ion-view>
