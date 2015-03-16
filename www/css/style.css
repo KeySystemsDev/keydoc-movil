@@ -451,3 +451,10 @@ input.ng-invalid.ng-touched {
     width: 100%;
     border-radius: 50%;
 }
+.bar.bar-stable {
+  border-bottom: solid #6DD9F2;
+  border-color: #6DD9F2;
+  background-color: #f8f8f8;
+  background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
+  color: #444;
+}
