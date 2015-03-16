@@ -1,7 +1,7 @@
-<ion-view view-title="Notificaciones">
+    <ion-view view-title="Notificaciones">
     <ion-content>
         <ion-list>
-            <a class="item item-remove-animate item-button-right item-avatar" ng-repeat="notificaciones in notificacion" href="#/tab/notification-detalle:{{notificaciones.id_cita}}">
+            <a class="item item-remove-animate item-button-right item-avatar" ng-repeat="notificaciones in notificacion" href="#/tab/notification-detalle:{{notificaciones.id_cita}}" ng-click="id_cita({{notificaciones.id_cita}})">
                 <img src="img/upload.png">
                 <h2 class="mayuscula" ng-if="notificaciones.nombre_paciente == null">
                     Dr. {{ notificaciones.nombre_doctor }}

@@ -77,20 +77,19 @@ angular.module('starter.controllers', [])
             });
         });
 
-    MyService.notificacion = notificaciones.get( {'id_grupo': localStorage.getItem('id_grupo'), 
-                                               'id_usuario': localStorage.getItem('id_usuario')}, function (dato) {
-            angular.forEach(dato, function () {
-                
-            });
-        });
+    $scope.id_cita = function(id_cita) {
+        MyService.id_cita = id_cita;
+    }
+
 })
 
-.controller('NotificationDetalleCtrl', function($scope, $stateParams, MyService) {
+.controller('NotificationDetalleCtrl', function($scope, $stateParams, MyService, notificacion_detalle) {
     console.log('NotificationDetalleCtrl');
-    
-    $scope.noti = MyService.notificacion[0];
-    console.log($scope.noti);
 
+    var id_cita = MyService.id_cita;
+
+    $scope.noti_detalle = notificacion_detalle.get({'id_cita': id_cita});
+    console.log($scope.noti_detalle);
 })
 
 .controller('CitasCtrl', function($scope, Friends, Specialty) {
