@@ -421,6 +421,7 @@ input.ng-invalid.ng-touched {
 .mayuscula{
     text-transform: capitalize;
 }
+/**/
 .img-noti-doctor{
     width: 80px;
     height: 80px;
@@ -452,11 +453,34 @@ input.ng-invalid.ng-touched {
 .cita-status{
     text-align: center;
 }
-
+/**/
 .body-direccion{
     overflow: auto;
-    padding: 16px;
-    padding-left: 50px;
+    padding: 10px;
+    padding-left: 20px;
     text-overflow: inherit;
     white-space: normal;
+}
+.body-direccion h4 ,p {
+    color: #666;
+    font-size: 16px;
+}
+.item-noti-detalle h2{
+    margin: 10px 0 2px 0px;
+}
+.item-noti-detalle p{
+    margin: 10px 5px 2px 0px;
+}
+.item-noti-detalle i{
+    margin: 10px 10px 2px 0px;
+    color: #707070;
+}
+.img-noti-detalle img{
+    position: absolute;
+    top: 23px;
+    left: 5px;
+    max-width: 65px;
+    max-height: 65px;
+    width: 100%;
+    border-radius: 50%;
 }
