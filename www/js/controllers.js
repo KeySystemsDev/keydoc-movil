@@ -88,8 +88,8 @@ angular.module('starter.controllers', [])
 
     var id_cita = MyService.id_cita;
 
-    $scope.noti_detalle = notificacion_detalle.get({'id_cita': id_cita});
-    console.log($scope.noti_detalle);
+    $scope.notificacion_detalle = notificacion_detalle.get({'id_cita': id_cita});
+
 })
 
 .controller('CitasCtrl', function($scope, Friends, Specialty) {

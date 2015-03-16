@@ -1,76 +1,46 @@
-<ion-view view-title="notificaciones">
+<ion-view view-title="Cita">
     <ion-content>
-        
-            <!--<div class="row noti-datos">
-                <div class="row noti-datos-img-nombre">
-                    <div class="col">
-                        <img class="img-noti-doctor" src="img/upload.png">
-                    </div>
-                    <div class="col-80">
-                        <h4 class="noti-nombre">Dr. Carlos Espinoza</h4>
-                    </div>
-                </div>
+        <ion-item class="item-avatar item-noti-detalle" type="item-text-wrap" href="#">
+            <div class="img-noti-detalle">
+                <img src="img/upload.png">
             </div>
-
-            <list class="list">
-
-                <item class="item item-icon-left" href="#">
-                    <i class="icon ion-heart"></i>
-                        Especialidad
-                </item>
-
-                <item class="item item-icon-left body-direccion" href="#">
-                    <i class="icon ion-android-pin"></i>
-                        Dirección
-                </item>
-
-                <item class="item item-icon-left" href="#">
-                    <i class="icon ion-android-calendar"></i>
-                        Fecha                 
-                </item>
-
-                <item class="item item-icon-left" href="#">
-                    <i class="icon ion-android-alarm-clock"></i>
-                        Hora                 
-                </item>
-
-                <div class="">
-                    <button class="button button-balanced">
-                    <h4>Aceptado</h4>
-                    </button>
-                </div>    
-                
-
-            </list>-->
-
-            <ion-item class="item-avatar item-noti-detalle" type="item-text-wrap" href="#">
-                <div class="img-noti-detalle">
-                    <img src="img/upload.png">
-                </div>
-                <div class="row">
-                    <i class="ion-heart"></i><p>Dr. </p><h2> Carlos Espinoza</h2>
-                </div>
-                <div class="row">
-                    <i class="ion-medkit"></i><h2> Odontología</h2>
-                </div>
-                <div class="row">
-                    <i class="ion-person"></i><p>Paciente </p> <h2>Ericka Marquez</h2>
-                </div>
-                <div class="row">
-                    <i class="ion-android-calendar"></i><p>Jueves</p><h2>14/02/2014</h2>
-                </div>
-                <div class="row">
-                    <i class="ion-android-alarm-clock"></i><h2>9:30 pm </h2>
-                </div>
-                <a class="button icon-left ion-checkmark-round button-balanced button-clear">Aceptada</a>
-            </ion-item>
-            <div class="body-direccion">
-     
-                <h4><i class="ion-location"></i> Dirección: </h4>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="row">
+                <i class="ion-heart"></i>
+                <p>Dr. </p>
+                <h2 class="mayuscula"> {{ notificacion_detalle[0].nombre_doctor }}</h2>
             </div>
+            <div class="row">
+                <i class="ion-medkit"></i>
+                <h2 class="mayuscula"> {{ notificacion_detalle[0].especialidad }}</h2>
+            </div>
+            <div class="row">
+                <i class="ion-person"></i>
+                <p>Paciente </p>
+                <h2 class="mayuscula">{{ notificacion_detalle[0].nombre_paciente }}</h2>
+            </div>
+            <div class="row">
+                <i class="ion-android-calendar"></i>
+                <p class="mayuscula">{{ notificacion_detalle[0].dia_fecha_agenda }}</p>
+                <h2>{{ notificacion_detalle[0].fecha_agenda }}</h2>
+            </div>
+            <div class="row">
+                <i class="ion-android-alarm-clock"></i><h2>{{ notificacion_detalle[0].hora_agenda }}</h2>
+            </div>
+            <a class="button icon-left ion-checkmark-round button-balanced button-clear" ng-if="notificacion_detalle[0].status_aprobado_cita == 1">
+                Aceptada
+            </a>
+            <a class="button icon-left ion-alert button-energized button-clear" ng-if="notificacion_detalle[0].status_pendiente_cita == 1">
+                Pendiente
+            </a>
+            <a class="button icon-left ion-close-round button-assertive button-clear" ng-if="notificacion_detalle[0].status_rechazado_cita == 1">
+                Rechazado
+            </a>
+        </ion-item>
+        <div class="body-direccion">
+ 
+            <h4><i class="ion-location"></i> Dirección: </h4>
 
-            <p>{{ noti_detalle}}</p>
+            <p>{{ notificacion_detalle[0].direccion_consultorio }}</p>
+        </div>
     </ion-content>
 </ion-view>
