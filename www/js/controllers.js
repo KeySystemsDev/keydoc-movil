@@ -54,17 +54,12 @@ angular.module('starter.controllers', [])
     
     $scope.doctores = Doctores.all();
 
-    $scope.playlists = [
-        { title: 'Dr.Carlos Lorem iIpsum', id: 1 },
-        { title: 'Dr.Diego Lorem iIpsum', id: 2 },
-        { title: 'Dr.Manuel Lorem iIpsum', id: 3 },
-        { title: 'Dr.Adrian Lorem iIpsum', id: 4 },
-        { title: 'Dr.Bella Lorem iIpsum', id: 5 },
-        { title: 'Dr.Karla Lorem iIpsum', id: 6 },
-        { title: 'Dr.Ana Lorem iIpsum', id: 7 },
-        { title: 'Dr.Ericka Lorem iIpsum', id: 8 }
-    ];
-
+    $scope.isVisible = false;
+    $scope.search = function() {
+        $scope.query = {};
+        $scope.isVisible = ! $scope.isVisible;
+        $ionicScrollDelegate.scrollTop();
+    };
 })
 
 .controller('NotificationCtrl', function($scope, notificaciones, MyService) {

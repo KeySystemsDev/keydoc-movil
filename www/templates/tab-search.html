@@ -1,19 +1,24 @@
 <ion-view view-title="Buscar">
+    
+    <ion-nav-buttons side="right">
+        <div class="row button-search-keydoc">    
+            <button class="button button-icon button-clear ion-search placeholder-icon" ng-click="search()"></button>
+        </div>
+    </ion-nav-buttons>
+    
     <ion-content>
-          
-          <label class="item item-input">
+
+        <label class="item item-input" ng-show="isVisible">
             <i class="icon ion-search placeholder-icon"></i>
-            <input type="search" ng-model="query"  placeholder="Search">
-          </label>
+            <input type="search" ng-model="query.search" placeholder="Search">
+        </label>
       
         <ion-list>
-        
-        <ion-item class="item-avatar item-icon-right" ng-repeat="doctore in doctores | filter:query"  href="#/tab/perfil/{{doctore.id}}">
-            <img ng-src="{{doctore.icons}}">
-            <h2>{{doctore.name}}</h2>
-        </ion-item>
-
-      </ion-list>
+            <ion-item class="item-avatar item-icon-right" ng-repeat="doctore in doctores | filter:query.search"  href="#/tab/perfil/{{doctore.id}}">
+                <img ng-src="{{doctore.icons}}">
+                <h2>{{doctore.name}}</h2>
+            </ion-item>
+        </ion-list>
 
     </ion-content>
 </ion-view>
