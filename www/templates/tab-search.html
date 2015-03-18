@@ -14,9 +14,10 @@
         </label>
       
         <ion-list>
-            <ion-item class="item-avatar item-icon-right" ng-repeat="doctore in doctores | filter:query.search"  href="#/tab/perfil/{{doctore.id}}">
-                <img ng-src="{{doctore.icons}}">
-                <h2>{{doctore.name}}</h2>
+            <ion-item class="item-avatar item-icon-right" ng-repeat="doctore in doctores | filter:query.search"  href="#">
+                <img src="img/upload.png">
+                <h2>Dr. {{ doctore.nombre_doctor }}</h2>
+                <p>Telf: {{ doctore.telefono_perfil }}</p>
             </ion-item>
         </ion-list>
 
