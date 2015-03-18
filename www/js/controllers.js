@@ -50,9 +50,12 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('SearchCtrl', function($scope, Doctores) {
+.controller('SearchCtrl', function($scope, Doctores, $ionicScrollDelegate, doctores_amigos) {
     
     $scope.doctores = Doctores.all();
+
+    $scope.doctores_amigos = doctores_amigos.get({'id_usuario': localStorage.getItem('id_usuario')});
+    console.log($scope.doctores_amigos); 
 
     $scope.isVisible = false;
     $scope.search = function() {

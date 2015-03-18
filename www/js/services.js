@@ -275,4 +275,13 @@ angular.module('starter.services', [])
         //ponemos isArray en true
         { get: { method: "GET", isArray: true }
     })
+})
+
+.factory("doctores_amigos", function ($resource) {
+    return $resource("http://keydoc.com.ve/movil/index/doctores_amigos", //la url donde queremos consumir
+        {}, //aquí podemos pasar variables que queramos pasar a la consulta
+        //a la función get le decimos el método, y, si es un array lo que devuelve
+        //ponemos isArray en true
+        { get: { method: "GET", isArray: true }
+    })
 });
