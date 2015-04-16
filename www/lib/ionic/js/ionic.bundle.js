@@ -43662,7 +43662,7 @@ IonicModule
     },
 
     navBar: {
-      alignTitle: 'left',
+      alignTitle: 'center',
       positionPrimaryButtons: 'right',
       positionSecondaryButtons: 'right'
     },
@@ -43680,7 +43680,7 @@ IonicModule
 
     tabs: {
       style: 'striped',
-      position: 'top'
+      position: 'bottom'
     }
 
   });
