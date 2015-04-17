@@ -1,6 +1,6 @@
 <ion-view view-title="Cita">
     <ion-content>
-        <ion-item class="item-avatar item-noti-detalle" type="item-text-wrap" href="#">
+        <!--<ion-item class="item-avatar item-noti-detalle" type="item-text-wrap" href="#">
             <div class="img-noti-detalle">
                 <img src="img/upload.png">
             </div>
@@ -41,6 +41,66 @@
             <h4><i class="ion-location"></i> Dirección: </h4>
 
             <p>{{ notificacion_detalle[0].direccion_consultorio }}</p>
-        </div>
+        </div>-->
+
+
+        <ion-item class="item-avatar item-noti-detalle" type="item-text-wrap" href="#">
+            
+            <div class="row">
+                <div class="col col-100 center">
+                    <h1>{{ notificacion_detalle[0].hora_agenda }}</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-100 center">
+                    <p> <i class="ion-android-calendar"></i> {{ notificacion_detalle[0].dia_fecha_agenda }} {{ notificacion_detalle[0].fecha_agenda }}</p>
+                </div>
+            </div>
+
+            <br>
+            <hr class="line-across">
+
+            <div class="img-noti-detalle">
+                <img src="img/upload.png">
+            </div>
+            <div class="row">
+                <i class="ion-heart"></i>
+                <p>Dr. </p>
+                <h2 class="mayuscula"> {{ notificacion_detalle[0].nombre_doctor }}</h2>
+            </div>
+            <div class="row">
+                <i class="ion-person"></i>
+                <h2 class="mayuscula"> {{ notificacion_detalle[0].nombre_paciente }}</h2>
+            </div>
+            <br>
+            
+        </ion-item>
+        
+        <ion-item>
+            <div class="row">
+                <div class="col col-50 left mayuscula especialidad">
+                    <i class="ion-medkit"></i>
+                    {{ notificacion_detalle[0].especialidad }}
+                </div>
+                <div class="col col-50 right">
+                    <a class="button icon-left ion-checkmark-round button-balanced button-clear" ng-if="notificacion_detalle[0].status_aprobado_cita == 1">
+                        Aceptada
+                    </a>
+                    <a class="button icon-left ion-alert button-energized button-clear" ng-if="notificacion_detalle[0].status_pendiente_cita == 1">
+                        Pendiente
+                    </a>
+                    <a class="button icon-left ion-close-round button-assertive button-clear" ng-if="notificacion_detalle[0].status_rechazado_cita == 1">
+                        Rechazado
+                    </a>
+                </div>
+            </div>
+
+            <div class="body-direccion">
+                <h4><i class="ion-location"></i> Dirección: </h4>
+                <p>{{ notificacion_detalle[0].direccion_consultorio }}</p>
+            </div>
+        </ion-item>
+
     </ion-content>
 </ion-view>
